@@ -32,19 +32,45 @@ Here's a simple assembly program that will add two numbers
 
 ## Make
 
-1. build with `arm-none-eabi-gcc`
+1. build with `arm-none-eabi-as`
 2. link to make an `elf`
 3. `objcopy` to make the `.hex` file
 4. `cp program.hex /media/charles/MICROBIT/`
 
 Program should be running!
 
+## Upload to the board
+
+`openocd -f interface/cmsis-dap.cfg -f target/nrf52.cfg -c "program test.hex verify reset exit"`
+
 ## Debug
 
-`openocd -f interface/cmsis-dap.cfg -f target/nrf52.cfg`
+1. start openocd: `openocd -f interface/cmsis-dap.cfg -f target/nrf52.cfg`
+2. start GDB: `gdb-multiarch test.elf`
 
-`gdb-multiarch blinky.elf`
+Now we have can type commands into GDB's shell.
 
+- first: connect GDB to OpenOCD: `target remote :3333`
+
+Now the program is running, GDB will tell you something like:
+```
+Remote debugging using :3333
+0x00000022 in loop ()
+```
+So the board is running the program, the program counter is at `0x00000022` and we're in under the label `loop`.
+
+Now we can issue a few GDB commands to see what's going on. Just to get started:
+
+- hit `Ctrl-C` to halt the program.
+- type `p $r1` to see the current value of `r1` - it should be 1 as the program sets it to 1 and never changes it. 
+- type `p $r0` to see the current value of `r0` - it should be some integer (maybe even a big negative number), the program increments `r0` over and over and it will eventually overflow.
+- to step the program forward type `nexti` which moves forward by one instruction
+- after moving forward a few instructions, you can check on `r0` (`p $r0`) to see if it's been incremented as we would expect.
+- to set your program going continuously, type `continue` (you can halt it again with `Ctrl-C`)
+
+## Conclusions
+
+This is obviously a _very basic_ test, but it's nice to see things working without the benefit of big integrated development systems. Now we know how to make artisanal, hand-crafted, assembly programs run on a micro:bit and we can prove that they work!
 
 ## Interesting Links
 
