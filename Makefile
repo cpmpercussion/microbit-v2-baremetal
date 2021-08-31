@@ -1,7 +1,7 @@
 all: test.hex
 
 %.o: %.s
-	arm-none-eabi-as -mcpu=cortex-m4 -mthumb $< -o $@
+	arm-none-eabi-gcc -nostdlib -nostartfiles -mcpu=cortex-m4 -mthumb -Wall -Werror -g -o $@ -c $<
 
 %.elf: %.o
 	arm-none-eabi-ld -T nRF52833.ld $^ -o $@ -Map $*.map
