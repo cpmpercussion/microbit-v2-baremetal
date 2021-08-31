@@ -51,6 +51,8 @@ Program should be running!
 - nRF52833 [Product Specification](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_nrf52%2Fstruct%2Fnrf52833.html)
 - Micro:bit v2 [Pin Map](https://tech.microbit.org/hardware/schematic/#v2-pinmap)
 - Micro:bit v2 [Schematic](https://github.com/microbit-foundation/microbit-v2-hardware/blob/main/V2/MicroBit_V2.0.0_S_schematic.PDF)
+- Linker file from [CODAL project](https://github.com/lancaster-university/codal-microbit-v2/blob/6e880bc3d10df1a585bb9046ee4ab02bdcab1f34/ld/nrf52833.ld)
+- M Spivey's [linker file](https://github.com/Spivoxity/baremetal-v2/blob/master/x09-pureasm/nRF52833.ld)
 
 [^1] Have a look at the [course
 website](https://cs.anu.edu.au/courses/comp2300) although this
