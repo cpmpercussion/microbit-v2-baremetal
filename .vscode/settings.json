@@ -1,0 +1,6 @@
+{
+    "cortex-debug.pathsRelativeToHome": true,
+    "cortex-debug.armToolchainPath": ".comp2300/arm-none-eabi/bin",
+    "cortex-debug.enableTelemetry": false,
+    "cortex-debug.openocdPath": ".comp2300/openocd/bin/openocd"
+}

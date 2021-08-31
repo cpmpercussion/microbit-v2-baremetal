@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build & debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "test.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "preLaunchTask": "build",
+            // "postLaunchCommands": [
+            //     "-break-insert -t main"
+            // ],
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/nrf52.cfg"
+            ],
+            "svdFile": ".vscode/nrf52833.svd",
+            "runToMain": true
+        }
+    ]
+}

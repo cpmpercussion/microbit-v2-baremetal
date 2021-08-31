@@ -1,4 +1,4 @@
-all: test.hex
+all: test.elf
 
 %.o: %.s
 	arm-none-eabi-gcc -nostdlib -nostartfiles -mcpu=cortex-m4 -mthumb -Wall -Werror -g -o $@ -c $<
