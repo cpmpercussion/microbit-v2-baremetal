@@ -80,8 +80,4 @@ This is obviously a _very basic_ test, but it's nice to see things working witho
 - Linker file from [CODAL project](https://github.com/lancaster-university/codal-microbit-v2/blob/6e880bc3d10df1a585bb9046ee4ab02bdcab1f34/ld/nrf52833.ld)
 - M Spivey's [linker file](https://github.com/Spivoxity/baremetal-v2/blob/master/x09-pureasm/nRF52833.ld)
 
-[^1] Have a look at the [course
-website](https://cs.anu.edu.au/courses/comp2300) although this
-currently (2021) refers to the previous ARM microcontroller board that
-we used: the STM32L476 Discovery Board, a neat little board which is
-sadly no longer in production!
+[^1]: Have a look at the [course website](https://comp.anu.edu.au/courses/comp2300)
